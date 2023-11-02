@@ -1,8 +1,7 @@
 "use strict"
-
-function renderCoffee(coffee) {
-    var html = `    <div class = "card d-flex">
-                    <a class="gentle-tilt-move-shake" href="/">
+const renderCoffee = (coffee) => {
+    let html = `    <div class = "card d-flex">
+                    <a class="gentle-tilt-move-shake" href="#">
                         <p class = "coffee-id"> Coffee id: ${coffee.id}.</p>
                         <p> ${coffee.name} &nbsp</p>
                         <p class="bean-roast"> Bean Roast: ${coffee.roast}</p>
@@ -12,25 +11,36 @@ function renderCoffee(coffee) {
     return html;
 }
 
-function renderCoffees(coffees) {
-    var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+const renderCoffees = (coffees) => {
+    let html = '';
+    for(let i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
 
-function updateCoffees(e) {
+const updateCoffees = (e) => {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedRoast = roastSelection.value;
-    var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
+    let selectedRoast = roastSelection.value;
+    let filteredCoffees = [];
+    coffees.forEach((coffee)=> {
         if (coffee.roast === selectedRoast || selectedRoast === "all") {
             filteredCoffees.push(coffee);
         }
 
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
+}
+
+const searchCoffees = () => {
+    let searchRoast = document.querySelector("#searchByName").value.toLowerCase();
+    let filteredCoffees = [];
+    coffees.forEach((coffee) => {
+        if (coffee.name.toLowerCase().includes(searchRoast)) {
+            filteredCoffees.push(coffee);
+        }
+    });
+    coffeeOption.innerHTML = renderCoffees(filteredCoffees);
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -50,34 +60,13 @@ let coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
-
-
-
-
-let tbody = document.querySelector('#coffees');
-let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 
-tbody.innerHTML = renderCoffees(coffees.reverse());
-
-submitButton.addEventListener('click', updateCoffees);
-
-
-function searchCoffees() {
-    let searchRoast = document.querySelector("#searchByName").value.toLowerCase();
-    let filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.name.toLowerCase().includes(searchRoast)) {
-            filteredCoffees.push(coffee);
-        }
-    });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
-}
 let searchBox = document.querySelector('#searchByName');
 searchBox.addEventListener("keyup", searchCoffees);
 
+let coffeeOption = document.querySelector('#coffees');
+coffeeOption.innerHTML = renderCoffees(coffees.reverse());
 
-
-
-
-
+let submitButton = document.querySelector('#submit');
+submitButton.addEventListener('click', updateCoffees);

@@ -67,6 +67,10 @@ body {
     display: none;
 }
 
+#coffees {
+    padding-top: 60px;
+}
+
 .searchByName {
     position: relative;
     z-index: 1;

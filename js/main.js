@@ -29,7 +29,7 @@ const updateCoffees = (e) => {
         }
 
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    coffeeOption.innerHTML = renderCoffees(filteredCoffees);
 }
 
 const searchCoffees = () => {

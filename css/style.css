@@ -12,7 +12,6 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     background-color: var(--primary-dark);
     color: var(--primary-ligth);
-
 }
 
 .header {
@@ -26,7 +25,6 @@ body {
     font-size: 25px;
     color: var(--primary-ligth);
     font-weight: 600;
-
 }
 
 .logo:hover {
@@ -54,7 +52,6 @@ body {
 }
 .company-logo:hover {
     transform: scale(1.15);
-
 }
 
 .top-img {
@@ -64,11 +61,10 @@ body {
     max-height: 600px;
     width: 98%;
     z-index: -1;
-
 }
+
 .coffee-id {
     display: none;
-
 }
 
 .searchByName {
@@ -78,21 +74,21 @@ body {
     height: 30px;
     border: 2px solid var(--transition-clr-blue);
     border-radius: 25px;
+    padding-left: 10px;
 }
 
 .searchByName::placeholder {
     color: var(--transition-clr-blue);
-    padding-left: 10px;
 }
 
 #roast-selection {
     color: var(--transition-clr-blue);
     border-radius: 25px;
-
+    padding-left: 10px;
+    height: 30px;
 }
 
 .roast-selection-btn {
-
     height: 50px;
     background-color: var(--transition-clr-blue);
     border: 2px solid var(--transition-clr-blue);
@@ -107,7 +103,6 @@ body {
 }
 
 .roast-selection-btn:hover {
-
     transform: scale(1.10);
     background-color: var(--primary-dark);
     color: var(--transition-clr-blue);
@@ -158,7 +153,6 @@ body {
 
 .social-media-nav a:nth-child(2):hover {
     color: var(--primary-dark);
-
 }
 
 .social-media-nav a:nth-child(2)::before {
@@ -185,7 +179,6 @@ body {
 .gentle-tilt-move-shake:hover {
     animation: tilt-n-move-shaking 0.25s infinite;
 }
-
 
 
 /**********************************BOOK TABLE PAGE**********************************/
@@ -248,7 +241,6 @@ body {
 #not:hover {
     visibility: hidden;
     position: relative;
-
 }
 
 #not:hover:after{
@@ -262,10 +254,7 @@ body {
 .about-us-text {
     line-height: 3vh;
 }
-
 /**********************************KEYFRAME**************************************/
-
-
 
 @keyframes tilt-n-move-shaking {
     0% { transform: translate(0, 0) rotate(0deg); }

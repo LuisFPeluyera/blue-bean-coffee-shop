@@ -241,14 +241,17 @@ body {
 
 
 /**********************************ABOUT US PAGE*****************************/
+#not {
+    color: var(--transition-clr-blue);
+}
 
-#not-starbucks:hover {
+#not:hover {
     visibility: hidden;
     position: relative;
 
 }
 
-#not-starbucks:hover:after{
+#not:hover:after{
     visibility: visible;
     position: absolute;
     top: 0;
